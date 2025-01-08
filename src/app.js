@@ -1,13 +1,13 @@
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const cors = require('@koa/cors');
-const config = require('./src/config');
-const errorHandler = require('./src/middleware/error.middleware');
-const loggerMiddleware = require('./src/middleware/logger.middleware');
-const { testConnection, dynamicLoggingMiddleware } = require('./src/models/db');
-const Router = require('./src/routes/index');
-const UserModel = require('./src/models/user');
-const swaggerMiddleware = require('./src/middleware/swagger.middleware');
+const config = require('./config');
+const errorHandler = require('./middleware/error.middleware');
+const loggerMiddleware = require('./middleware/logger.middleware');
+const { testConnection, dynamicLoggingMiddleware } = require('./models/db');
+const Router = require('./routes/index');
+const UserModel = require('./models/user');
+const swaggerMiddleware = require('./middleware/swagger.middleware');
 
 const app = new Koa();
 
