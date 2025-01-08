@@ -1,0 +1,174 @@
+2025-01-08 10:14:14:1414 [32minfo[39m: [32m--> POST /api/login[39m
+2025-01-08 10:14:14:1414 [32minfo[39m: [32m<-- POST /api/login 200 14ms[39m
+2025-01-08 10:33:19.515 [36mdebug[39m: [36m[SQL] Executed (default): SELECT 1+1 AS result[39m
+2025-01-08 10:33:19.521 [36mdebug[39m: [36m[SQL] Executed (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Users' AND TABLE_SCHEMA = 'koa_app'[39m
+2025-01-08 10:33:19.524 [36mdebug[39m: [36m[SQL] Executed (default): SHOW FULL COLUMNS FROM `Users`;[39m
+2025-01-08 10:33:19.526 [36mdebug[39m: [36m[SQL] Executed (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'Users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='koa_app' AND REFERENCED_TABLE_NAME IS NOT NULL;[39m
+2025-01-08 10:33:19.551 [36mdebug[39m: [36m[SQL] Executed (default): ALTER TABLE `Users` CHANGE `username` `username` VARCHAR(255) NOT NULL UNIQUE;[39m
+2025-01-08 10:33:19.557 [36mdebug[39m: [36m[SQL] Executed (default): ALTER TABLE `Users` CHANGE `password` `password` VARCHAR(255) NOT NULL;[39m
+2025-01-08 10:33:19.561 [36mdebug[39m: [36m[SQL] Executed (default): ALTER TABLE `Users` CHANGE `createdAt` `createdAt` DATETIME;[39m
+2025-01-08 10:33:19.566 [36mdebug[39m: [36m[SQL] Executed (default): ALTER TABLE `Users` CHANGE `updatedAt` `updatedAt` DATETIME;[39m
+2025-01-08 10:33:19.569 [36mdebug[39m: [36m[SQL] Executed (default): SHOW INDEX FROM `Users`[39m
+2025-01-08 10:33:19.574 [36mdebug[39m: [36m[SQL] Executed (default): SELECT `id`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'admin';[39m
+2025-01-08 10:41:07.724 [32minfo[39m: [32m--> POST /api/login[39m
+2025-01-08 10:41:07.727 [36mdebug[39m: [36mRequest details:[39m
+{
+  "method": "POST",
+  "url": "/api/login",
+  "query": {},
+  "headers": {
+    "user-agent": "Apifox/1.0.0 (https://apifox.com)",
+    "content-type": "application/json",
+    "accept": "*/*",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "53"
+  }
+}
+2025-01-08 10:41:07.728 [31merror[39m: [31m<-- POST /api/login 500 3ms[39m
+[31mError: sequelize is not defined[39m
+[31mStack: ReferenceError: sequelize is not defined[39m
+[31m    at dynamicLoggingMiddleware (/Users/senkoo/koa/src/middleware/logger.middleware.js:43:5)[39m
+[31m    at dispatch (/Users/senkoo/koa/node_modules/.pnpm/koa-compose@4.1.0/node_modules/koa-compose/index.js:42:32)[39m
+[31m    at loggerMiddleware (/Users/senkoo/koa/src/middleware/logger.middleware.js:20:15)[39m
+[31m    at dispatch (/Users/senkoo/koa/node_modules/.pnpm/koa-compose@4.1.0/node_modules/koa-compose/index.js:42:32)[39m
+[31m    at /Users/senkoo/koa/node_modules/.pnpm/koa-compose@4.1.0/node_modules/koa-compose/index.js:34:12[39m
+[31m    at Application.handleRequest (/Users/senkoo/koa/node_modules/.pnpm/koa@2.15.3/node_modules/koa/lib/application.js:186:12)[39m
+[31m    at Server.handleRequest (/Users/senkoo/koa/node_modules/.pnpm/koa@2.15.3/node_modules/koa/lib/application.js:157:21)[39m
+[31m    at Server.emit (node:events:517:28)[39m
+[31m    at parserOnIncoming (node:_http_server:1107:12)[39m
+[31m    at HTTPParser.parserOnHeadersComplete (node:_http_common:119:17)[39m
+2025-01-08 10:42:14.479 [32minfo[39m: [32m--> POST /api/login[39m
+2025-01-08 10:42:14.482 [36mdebug[39m: [36mRequest details:[39m
+{
+  "method": "POST",
+  "url": "/api/login",
+  "query": {},
+  "headers": {
+    "user-agent": "Apifox/1.0.0 (https://apifox.com)",
+    "content-type": "application/json",
+    "accept": "*/*",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "53"
+  }
+}
+2025-01-08 10:42:14.483 [31merror[39m: [31m<-- POST /api/login 500 3ms[39m
+[31mError: Cannot set properties of undefined (setting 'logging')[39m
+[31mStack: TypeError: Cannot set properties of undefined (setting 'logging')[39m
+[31m    at dynamicLoggingMiddleware (/Users/senkoo/koa/src/middleware/logger.middleware.js:44:31)[39m
+[31m    at dispatch (/Users/senkoo/koa/node_modules/.pnpm/koa-compose@4.1.0/node_modules/koa-compose/index.js:42:32)[39m
+[31m    at loggerMiddleware (/Users/senkoo/koa/src/middleware/logger.middleware.js:21:15)[39m
+[31m    at dispatch (/Users/senkoo/koa/node_modules/.pnpm/koa-compose@4.1.0/node_modules/koa-compose/index.js:42:32)[39m
+[31m    at /Users/senkoo/koa/node_modules/.pnpm/koa-compose@4.1.0/node_modules/koa-compose/index.js:34:12[39m
+[31m    at Application.handleRequest (/Users/senkoo/koa/node_modules/.pnpm/koa@2.15.3/node_modules/koa/lib/application.js:186:12)[39m
+[31m    at Server.handleRequest (/Users/senkoo/koa/node_modules/.pnpm/koa@2.15.3/node_modules/koa/lib/application.js:157:21)[39m
+[31m    at Server.emit (node:events:517:28)[39m
+[31m    at parserOnIncoming (node:_http_server:1107:12)[39m
+[31m    at HTTPParser.parserOnHeadersComplete (node:_http_common:119:17)[39m
+2025-01-08 10:44:08.053 [32minfo[39m: [32m--> POST /api/login[39m
+2025-01-08 10:44:08.055 [36mdebug[39m: [36mRequest details:[39m
+{
+  "method": "POST",
+  "url": "/api/login",
+  "query": {},
+  "headers": {
+    "user-agent": "Apifox/1.0.0 (https://apifox.com)",
+    "content-type": "application/json",
+    "accept": "*/*",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "53"
+  }
+}
+2025-01-08 10:44:08.071 [36mdebug[39m: [36m[SQL] Executed (default): SELECT `id`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'admin' AND `User`.`password` = '123456';[39m
+2025-01-08 10:44:08.074 [32minfo[39m: [32m<-- POST /api/login 200 22ms[39m
+2025-01-08 10:44:08.074 [36mdebug[39m: [36mResponse details:[39m
+{
+  "status": 200,
+  "body": {
+    "code": 200,
+    "message": "登录成功",
+    "data": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTczNjMwNDI0OCwiZXhwIjoxNzM2MzA3ODQ4fQ.Y9b-bBu8XhH7aZzMIjZflXmsowX7ytNOhUbC9q-Gjyw",
+      "user": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  },
+  "duration": "22ms"
+}
+2025-01-08 10:47:39.998 [32minfo[39m: [32m数据库连接成功[39m
+2025-01-08 10:47:45.657 [32minfo[39m: [32m--> POST /api/login[39m
+2025-01-08 10:47:45.657 [36mdebug[39m: [36m请求详情:[39m
+{
+  "方法": "POST",
+  "路径": "/api/login",
+  "查询参数": {},
+  "请求头": {
+    "user-agent": "Apifox/1.0.0 (https://apifox.com)",
+    "content-type": "application/json",
+    "accept": "*/*",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "53"
+  }
+}
+2025-01-08 10:47:45.665 [36mdebug[39m: [36m[SQL] Executed (default): SELECT `id`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'admin' AND `User`.`password` = '123456';[39m
+2025-01-08 10:47:45.668 [32minfo[39m: [32m<-- POST /api/login 200 11ms[39m
+2025-01-08 10:47:45.669 [36mdebug[39m: [36m响应详情:[39m
+{
+  "状态码": 200,
+  "响应体": {
+    "code": 200,
+    "message": "登录成功",
+    "data": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTczNjMwNDQ2NSwiZXhwIjoxNzM2MzA4MDY1fQ.a4CKJasrkc25ktUXZG-CcvfTkO84Uc0ujaaLGQvLUyM",
+      "user": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  },
+  "处理时间": "11ms"
+}
+2025-01-08 10:49:14.960 [32minfo[39m: [32m数据库连接成功[39m
+2025-01-08 10:49:19.608 [32minfo[39m: [32m--> POST /api/login[39m
+2025-01-08 10:49:19.608 [36mdebug[39m: [36mRequest details:[39m
+{
+  "method": "POST",
+  "url": "/api/login",
+  "query": {},
+  "headers": {
+    "user-agent": "Apifox/1.0.0 (https://apifox.com)",
+    "content-type": "application/json",
+    "accept": "*/*",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "53"
+  }
+}
+2025-01-08 10:49:19.616 [36mdebug[39m: [36m[SQL] Executed (default): SELECT `id`, `username`, `password`, `createdAt`, `updatedAt` FROM `Users` AS `User` WHERE `User`.`username` = 'admin' AND `User`.`password` = '123456';[39m
+2025-01-08 10:49:19.620 [32minfo[39m: [32m<-- POST /api/login 200 11ms[39m
+2025-01-08 10:49:19.620 [36mdebug[39m: [36mResponse details:[39m
+{
+  "status": 200,
+  "body": {
+    "code": 200,
+    "message": "登录成功",
+    "data": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTczNjMwNDU1OSwiZXhwIjoxNzM2MzA4MTU5fQ.xiNdY_114rv36NibdN0qEYapOTBzB909pm5VOx-7BNE",
+      "user": {
+        "id": 1,
+        "username": "admin"
+      }
+    }
+  },
+  "duration": "11ms"
+}
