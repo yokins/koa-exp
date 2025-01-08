@@ -4,9 +4,10 @@ const cors = require('@koa/cors');
 const config = require('./src/config');
 const errorHandler = require('./src/middleware/error.middleware');
 const loggerMiddleware = require('./src/middleware/logger.middleware');
-const authRoutes = require('./src/routes/auth.routes');
 const { testConnection, dynamicLoggingMiddleware } = require('./src/models/db');
+const Router = require('./src/routes/index');
 const UserModel = require('./src/models/user');
+const swaggerMiddleware = require('./src/middleware/swagger.middleware');
 
 const app = new Koa();
 
@@ -16,10 +17,13 @@ app.use(dynamicLoggingMiddleware);
 app.use(bodyParser());
 app.use(cors());
 app.use(errorHandler);
+app.use(swaggerMiddleware);
 
 // 注册路由
-app.use(authRoutes.routes());
-app.use(authRoutes.allowedMethods());
+// Router.get('/api-docs', swaggerMiddleware);
+app.use(Router.routes()).use(Router.allowedMethods());
+
+
 
 // 错误处理
 app.on('error', (err, ctx) => {
